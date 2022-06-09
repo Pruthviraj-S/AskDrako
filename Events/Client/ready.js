@@ -1,5 +1,6 @@
-const { guildid } = require('../../config.json');
+const { guildid, dbtoken } = require('../../config.json');
 const { Client, MessageEmbed, CommandInteraction, Guild } = require('discord.js')
+const { mongoose } = require('mongoose')
 
 module.exports = {
     name: 'ready',
@@ -24,5 +25,16 @@ module.exports = {
             .setDescription(`**Client:** 🟢 Online, from LocalHost.`)
         // client.guilds.cache.get(guildid).channels.cache.get('983002770468655195').send({embeds: [status]})
         console.log(`Bot logged in as ${client.user.username} and ID: ${client.user.id}`)
+
+        // Connect MongoDb
+        if (!dbtoken) return;
+        mongoose.connect(dbtoken, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        }).then(()=>{
+            console.log(`The Bot is connected to MongoDb`)
+        }).catch((err)=>{
+            console.log(err)
+        });
     }
 }
