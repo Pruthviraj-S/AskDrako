@@ -1,3 +1,5 @@
+*------Index.js------*
+
 // slash command prereq
 // const { SlashCommandBuilder } = require('@discordjs/builders');
 // const { REST } = require('@discordjs/rest');
@@ -39,3 +41,27 @@
 //         message.reply({content:'pong'})
 //     }
 // })
+
+*-----CommandHandler.js------*
+
+        // Currentguild.commands.set(CommandsArray).then(async(command) => {
+        //     const Roles = (commandName) => {
+        //         const CmdPerms = CommandsArray.find((c)=>c.name === commandName).permission
+        //         if(!CmdPerms) return null;
+        //         // get roles from cache
+        //         return Currentguild.roles.cache.filter((r)=>r.permissions.has(CmdPerms))
+        //     }
+
+        //     const fullPermissions = command.reduce((accumulator,r)=>{
+        //         const roles = Roles(r.name);
+        //         if(!roles) return accumulator;
+                
+        //         const permissions = roles.reduce((a,r)=>{
+        //             return[...a, {id: r.id,type:'ROLE',permission:true}]
+        //         },[]);
+
+        //         return [...accumulator,{id:r.id,permissions}]
+        //     },[]);
+
+        //     await Currentguild.commands.permissions.set({fullPermissions})
+        // });

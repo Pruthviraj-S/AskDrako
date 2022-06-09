@@ -19,8 +19,8 @@ const client = new Client({
 client.commands = new Collection()
 
 // import event handler
-require('./Handlers/EventHandler.js')(client)
+require('./Handlers/EventHandler.js')(client);
 // import command handler
-require('./Handlers/CommandHandler')(client)
+require('./Handlers/CommandHandler')(client);
 // Login to Discord with your client's token
 client.login(token);
