@@ -30,7 +30,7 @@ module.exports = async ( client ) => {
             );
         };
 
-        await Table.addRow(event.name, '✅ Succesful.')
+        await Table.addRow(event.name, '✅ Succesfull.')
 
     });
 // log in console

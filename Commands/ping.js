@@ -3,13 +3,13 @@ const {CommandInteraction} =  require('discord.js')
 module.exports = {
     name: 'ping',
     description: 'basic ping commands',
-    permission: 'ADMINISTRATOR',
+    permission: '',
     /**
      * @param {CommandInteraction} interaction
      */
     execute(interaction){
         interaction.reply({
-            content: 'Pong!!',
+            content: 'POOOOOOOOOOOOOONG!!!',
             ephemeral:true
         })
     }

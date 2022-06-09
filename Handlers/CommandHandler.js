@@ -10,7 +10,6 @@ const PG = promisify(glob);
 const Ascii = require('ascii-table');
 const { resourceUsage } = require('process');
 // enables suggestions for methods
-
 /**
  * @param {Client} client 
  */
@@ -43,7 +42,7 @@ module.exports = async (client) => {
         client.commands.set(command.name,command);
         CommandsArray.push(command);
 
-        await Table.addRow(command.name,'✅ Succesful.');
+        await Table.addRow(command.name,'✅ Succesfull.');
     })
 
     console.log(Table.toString());
