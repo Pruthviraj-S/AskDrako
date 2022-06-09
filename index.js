@@ -1,7 +1,7 @@
 // Documentation: https://discord.js.org/#/docs/discord.js/main/general/welcome
 
 // Require the necessary discord.js classes
-const { Client, Intents, MessageEmbed } = require('discord.js');
+const { Client, Intents, MessageEmbed, Collection } = require('discord.js');
 
 //  Import data from config.json
 const { prefix, token , guildid, clientid} = require('./config.json');
@@ -15,6 +15,12 @@ const client = new Client({
     ] 
 });
 
+// create commands collection
+client.commands = new Collection()
+
+// import event handler
 require('./Handlers/EventHandler.js')(client)
+// import command handler
+require('./Handlers/CommandHandler')(client)
 // Login to Discord with your client's token
 client.login(token);
