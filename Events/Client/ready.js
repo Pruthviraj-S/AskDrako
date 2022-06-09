@@ -9,8 +9,7 @@ module.exports = {
         client.user.setPresence({
             activities: [
                 {
-                    name: 'with P_dawg#0304',
-                    type: Watching,
+                    name: 'with P_dawg#0304'
                 }
             ], 
             status: 'idle'
