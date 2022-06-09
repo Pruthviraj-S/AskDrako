@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/Pruthviraj-S/idle-heroes-discord.js-bot#readme",
   "dependencies": {
+    "ascii-table": "^0.0.9",
     "discord.js": "^13.8.0",
+    "glob": "^8.0.3",
     "nodemon": "^2.0.16"
   }
 }
