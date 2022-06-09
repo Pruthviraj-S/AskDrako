@@ -1,11 +1,11 @@
 {
   "name": "idle-heroes-discord.js-bot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Bot for The Watchers guild using node.js",
-  "main": "init.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon init.js"
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
