@@ -21,7 +21,7 @@ const { glob } = require('glob');
 const PG = promisify(glob);
 const Ascii = require('ascii-table');
 
-// create commands collection
+// create collections
 client.commands = new Collection();
 
 ["EventHandler","CommandHandler"].forEach(handler => {
