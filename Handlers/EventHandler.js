@@ -1,13 +1,11 @@
+const {Client} = require('discord.js')
 // import validation
 const { Events } = require('../validation/EventNames.js');
-// use promisify to convert callback into promise using utils
-const {promisify} = require('util');
-// pattern resolver, https://www.npmjs.com/package/glob
-const {glob} = require('glob');
-const PG = promisify(glob);
-const Ascii = require('ascii-table')
-
-module.exports = async ( client ) => {
+/**
+ * 
+ * @param {Client} client 
+ */
+module.exports = async ( client,PG,Ascii ) => {
     // insert table
     const Table = new Ascii('Events Loaded!!');
     // load events into the table

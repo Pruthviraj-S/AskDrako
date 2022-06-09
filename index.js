@@ -15,12 +15,17 @@ const client = new Client({
     ] 
 });
 
-// create commands collection
-client.commands = new Collection()
+// use promisify to convert callback into promise using utils, add table, glob
+const {promisify} = require('util');
+const { glob } = require('glob');
+const PG = promisify(glob);
+const Ascii = require('ascii-table');
 
-// import event handler
-require('./Handlers/EventHandler.js')(client);
-// import command handler
-require('./Handlers/CommandHandler')(client);
+// create commands collection
+client.commands = new Collection();
+
+["EventHandler","CommandHandler"].forEach(handler => {
+    require(`./Handlers/${handler}`)(client,PG,Ascii);
+});
 // Login to Discord with your client's token
 client.login(token);

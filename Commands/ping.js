@@ -1,15 +1,17 @@
 // pre-reqs
-const {CommandInteraction} =  require('discord.js')
+const {CommandInteraction, Client} =  require('discord.js')
 module.exports = {
     name: 'ping',
-    description: 'basic ping commands',
+    description: 'Bot Ping',
     permission: '',
     /**
-     * @param {CommandInteraction} interaction
+     * 
+     * @param {CommandInteraction} interaction 
+     * @param {Client} client 
      */
-    execute(interaction){
+    execute(interaction,client){
         interaction.reply({
-            content: 'POOOOOOOOOOOOOONG!!!',
+            content: `**${client.ws.ping}ms**`,
             ephemeral:true
         })
     }
