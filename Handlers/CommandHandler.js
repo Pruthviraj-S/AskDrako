@@ -50,7 +50,7 @@ module.exports = async (client) => {
     // permission validation
     client.on('ready',async () => {
         
-        const Currentguild = await client.guilds.cache.get(guildid);
+        const Currentguild = client.guilds.cache.get(guildid);
         Currentguild.commands.set(CommandsArray);
 
     });

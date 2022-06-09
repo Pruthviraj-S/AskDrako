@@ -65,3 +65,9 @@
 
         //     await Currentguild.commands.permissions.set({fullPermissions})
         // });
+
+// send status in channel
+        const status = new MessageEmbed()
+            .setColor('RANDOM')
+            .setDescription(`**Client:** 🟢 Online, **Db:**${connection.readyState}`)
+        client.guilds.cache.get(guildid).channels.cache.get('983002770468655195').send({embeds: [status]})
