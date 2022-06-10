@@ -1,10 +1,10 @@
 // pre-reqs
-const {CommandInteraction, Client, MessageEmbed} =  require('discord.js')
+const {CommandInteraction, MessageEmbed} =  require('discord.js')
 
 module.exports = {
-    name: 'guilds',
-    description: 'Show current guild info',
-    permission: '',
+    name: 'guild',
+    description: 'Send guild info',
+    permission: 'BAN_MEMBERS',
     options: [
         {
             name: 'tw',
@@ -22,9 +22,8 @@ module.exports = {
     /**
      * 
      * @param {CommandInteraction} interaction 
-     * @param {Client} client 
      */
-    execute(interaction,client){
+    execute(interaction){
         const num1 = interaction.options.getInteger('tw')
         const num2 = interaction.options.getInteger('tws')
         // embed make
@@ -33,6 +32,8 @@ module.exports = {
         .setTitle('Guild Status')
         .setDescription(`**The Watchers(TW): ${num1}/27** \n **TWS: ${num2}/18**`)
         // send embed
-        interaction.reply({embeds:[emb]})
+        let channel = interaction.guild.channels.cache.get('982747128801660929')
+        interaction.reply({content:`Message succesfully sent in <#982747128801660929>`,ephemeral:true})
+        channel.send(({embeds:[emb]}))
     }
 }
