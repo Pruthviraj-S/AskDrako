@@ -1,7 +1,7 @@
 // pre-req
 const {Client,CommandInteraction,MessageEmbed} = require('discord.js');
 const {connection} = require('mongoose');
-require('../Events/Client/ready');
+require('../../Events/Client/ready');
 
 module.exports = {
     name: 'status',
