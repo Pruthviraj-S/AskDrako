@@ -6,6 +6,7 @@ require('../Events/Client/ready');
 module.exports = {
     name: 'status',
     description: 'Shows Bot Status',
+    permission: 'BAN_MEMBERS',
     /**
      * 
      * @param {CommandInteraction} interaction 

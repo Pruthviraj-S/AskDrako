@@ -44,7 +44,7 @@ module.exports = async (client,PG,Ascii) => {
 
     console.log(Table.toString());
 
-    // permission validation
+    //  update commands
     client.on('ready',async () => {
         
         const Currentguild = client.guilds.cache.get(guildid);
