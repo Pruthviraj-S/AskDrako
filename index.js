@@ -1,3 +1,4 @@
+// Made using discord.js v13
 // Documentation: https://discord.js.org/#/docs/discord.js/main/general/welcome
 
 // Require the necessary discord.js classes
@@ -27,5 +28,6 @@ client.commands = new Collection();
 ["EventHandler","CommandHandler"].forEach(handler => {
     require(`./Handlers/${handler}`)(client,PG,Ascii);
 });
+
 // Login to Discord with your client's token
 client.login(token);
