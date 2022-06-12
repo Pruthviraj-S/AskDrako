@@ -28,6 +28,5 @@ client.commands = new Collection();
 ["EventHandler","CommandHandler"].forEach(handler => {
     require(`./Handlers/${handler}`)(client,PG,Ascii);
 });
-
 // Login to Discord with your client's token
 client.login(token);
