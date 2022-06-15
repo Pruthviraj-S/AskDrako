@@ -76,3 +76,81 @@
 require('./Handlers/EventHandler.js')(client);
 // import command handler
 require('./Handlers/CommandHandler')(client);
+
+
+
+
+// pre-reqs
+const { CommandInteraction, MessageEmbed } = require('discord.js')
+module.exports = {
+    name: 'gu',
+    description: 'Update guild info',
+    permission: 'BAN_MEMBERS',
+    options: [
+        {
+            name: 'guild',
+            description: 'Choose Guild. ',
+            required: true,
+            type: 3,
+            choices: [
+                {
+                    name: 'The Watchers',
+                    value: 'TW'
+                },
+                {
+                    name: 'The Watcher Sis',
+                    value: 'TWS'
+                },
+                {
+                    name: 'MfinSquis',
+                    value: 'MFS'
+                },
+            ],
+        },
+        {
+            name: 'guildspace',
+            description: 'GuildSpace for the guild.',
+            required: true,
+            type: 4
+        }
+    ],
+    /**
+     * 
+     * @param {CommandInteraction} interaction 
+     */
+    async execute(interaction) {
+        // fetch old embed
+        let channel = interaction.guild.channels.cache.get('982747128801660929')
+        let target_msg = await channel.messages.fetch(`${channel.lastMessageId}`, { force: true, cache: true })
+        // check if message exist
+        if (!target_msg) {
+            interaction.reply({ content: ` ⚠️ Message not found !! Check if Original Message in **<#982747128801660929>** was deleted. \n If so use /guild command to add new message. `, ephemeral: true })
+        } else {
+            // edit the embed
+            const newemb = new MessageEmbed(switch_guild(interaction.options.getString('guild')))
+            newemb.fields[3].value = `${interaction.options.getInteger('guildspace')}`
+            target_msg.embeds[0].edit({ embeds: [newemb] })
+
+            // Send confirmation embed
+            const emb = new MessageEmbed()
+                .setColor('GREEN')
+                .setDescription(`✅ Guild Status Updated in **<#982747128801660929>**`)
+            interaction.reply({ embeds: [emb], ephemeral: true })
+        }
+
+        // switch guild function
+        function switch_guild(valset) {
+            var set_embed = '';
+            switch (valset) {
+                case 'TW': set_embed = target_msg.embeds[0]
+                    break;
+                case 'TWS': set_embed = target_msg.embeds[1]
+                    break;
+                case 'MFS': set_embed = target_msg.embeds[2]
+                    break;
+            }
+            return set_embed;
+        }
+    }
+}
+

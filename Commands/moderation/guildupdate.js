@@ -1,21 +1,46 @@
 // pre-reqs
-const { CommandInteraction, MessageEmbed} = require('discord.js')
-
+const { CommandInteraction, MessageEmbed } = require('discord.js')
 module.exports = {
     name: 'guildupdate',
     description: 'Update guild info',
     permission: 'BAN_MEMBERS',
     options: [
         {
-            name: 'tw',
-            description: 'GuildSpace for TW',
+            name: 'guild',
+            description: 'Choose Guild. ',
+            required: true,
+            type: 3,
+            choices: [
+                {
+                    name: 'The Watchers',
+                    value: 'TW'
+                },
+                {
+                    name: 'The Watcher Sis',
+                    value: 'TWS'
+                },
+                {
+                    name: 'MfinSquis',
+                    value: 'MFS'
+                },
+            ],
+        },
+        {
+            name: 'guildspace',
+            description: 'GuildSpace for the guild.',
             required: true,
             type: 4
         },
         {
-            name: 'tws',
-            description: 'GuildSpace for TWS',
-            required: true,
+            name: 'guildlvl',
+            description: 'Set Guild lvl.',
+            required: false,
+            type: 4
+        },
+        {
+            name: 'maxguildcap',
+            description: 'Set  max Guild capacity.',
+            required: false,
             type: 4
         }
     ],
@@ -24,28 +49,34 @@ module.exports = {
      * @param {CommandInteraction} interaction 
      */
     async execute(interaction) {
-        const num1 = interaction.options.getInteger('tw')
-        const num2 = interaction.options.getInteger('tws')
         // fetch old embed
         let channel = interaction.guild.channels.cache.get('982747128801660929')
         let target_msg = await channel.messages.fetch(`${channel.lastMessageId}`, { force: true, cache: true })
         // check if message exist
-        if (!target_msg || !target_msg.embeds[0]) {
-            interaction.reply({ content: ` ⚠️ Message not found !! Check if Original Message in **<#982747128801660929>** was deleted. \n If so use /guild command in **<#982747128801660929>** to add new message. `, ephemeral: true })
+        if (!target_msg) {
+            interaction.reply({ content: ` ⚠️ Message not found !! Check if Original Message in **<#982747128801660929>** was deleted. \n If so use /guild command to add new message. `, ephemeral: true })
         } else {
-            const oldemb = target_msg.embeds[0]
-            // embed make
+            // edit the embed
+            const set_guild = (interaction.options.getString('guild') == 'TW' ? 0 : interaction.options.getString('guild') == 'TWS' ? 1 : interaction.options.getString('guild') == 'MFS' ? 2 : null)
+            const newemb = new MessageEmbed(target_msg.embeds[set_guild])
+            newemb.fields[3].value = `${interaction.options.getInteger('guildspace')}`
+            // check if optional params given
+            if (interaction.options.getInteger('guildlvl')) { newemb.fields[1].value = `${interaction.options.getInteger('guildlvl')}` }
+            if (interaction.options.getInteger('maxguildcap')) { newemb.fields[4].value = `${interaction.options.getInteger('maxguildcap')}` }
+            // send edited embed
+            if (set_guild == 0) {
+                target_msg.edit({ embeds: [newemb, target_msg.embeds[1], target_msg.embeds[2]] })
+            } else if (set_guild == 1) {
+                target_msg.edit({ embeds: [target_msg.embeds[0], newemb, target_msg.embeds[2]] })
+            } else {
+                target_msg.edit({ embeds: [target_msg.embeds[0], target_msg.embeds[1], newemb] })
+            }
+            // Send confirmation embed
             const emb = new MessageEmbed()
                 .setColor('GREEN')
                 .setDescription(`✅ Guild Status Updated in **<#982747128801660929>**`)
-            // send embed
-            interaction.reply({ embeds: [emb] ,ephemeral:true})
-            // update status in channel
-            const newemb = new MessageEmbed()
-                .setColor(oldemb.color)
-                .setTitle(oldemb.title)
-                .setDescription(`**The Watchers(TW): ${num1}/28** \n **TWS: ${num2}/18**`)
-            target_msg.edit({ embeds: [newemb] })
+            interaction.reply({ embeds: [emb], ephemeral: true })
         }
     }
 }
+
