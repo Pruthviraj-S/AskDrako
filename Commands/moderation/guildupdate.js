@@ -44,7 +44,7 @@ module.exports = {
             const newemb = new MessageEmbed()
                 .setColor(oldemb.color)
                 .setTitle(oldemb.title)
-                .setDescription(`**The Watchers(TW): ${num1}/27** \n **TWS: ${num2}/18**`)
+                .setDescription(`**The Watchers(TW): ${num1}/28** \n **TWS: ${num2}/18**`)
             target_msg.edit({ embeds: [newemb] })
         }
     }
