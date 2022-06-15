@@ -30,7 +30,7 @@ module.exports = {
         const emb = new MessageEmbed()
         .setColor('AQUA')
         .setTitle('Guild Status')
-        .setDescription(`**The Watchers(TW): ${num1}/27** \n **TWS: ${num2}/18**`)
+        .setDescription(`**The Watchers(TW): ${num1}/28** \n **TWS: ${num2}/18**`)
         // send embed
         let channel = interaction.guild.channels.cache.get('982747128801660929')
         interaction.reply({content:`Message succesfully sent in <#982747128801660929>`,ephemeral:true})
