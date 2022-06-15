@@ -9,16 +9,16 @@ const { prefix, guildid, clientid } = require('./config.json');
 require('dotenv').config();
 
 // Create a new client instance, https://discord.js.org/#/docs/main/stable/class/Intents
-const client = new Client({ 
+const client = new Client({
     intents: [
-        Intents.FLAGS.GUILDS, 
+        Intents.FLAGS.GUILDS,
         Intents.FLAGS.GUILD_MESSAGES,
         Intents.FLAGS.GUILD_MEMBERS
-    ] 
+    ]
 });
 
 // use promisify to convert callback into promise using utils, add table, glob
-const {promisify} = require('util');
+const { promisify } = require('util');
 const { glob } = require('glob');
 const PG = promisify(glob);
 const Ascii = require('ascii-table');
@@ -26,8 +26,8 @@ const Ascii = require('ascii-table');
 // create collections
 client.commands = new Collection();
 
-["EventHandler","CommandHandler"].forEach(handler => {
-    require(`./Handlers/${handler}`)(client,PG,Ascii);
+["EventHandler", "CommandHandler"].forEach(handler => {
+    require(`./Handlers/${handler}`)(client, PG, Ascii);
 });
 // Login to Discord with your client's token
 client.login(process.env.BOT_TOKEN);

@@ -22,12 +22,12 @@ module.exports = {
         // variables
         var num = Math.floor(Math.random() * 10);
         var arr = ['https://media.giphy.com/media/GRM7Z2s6AougoR3rvv/giphy.gif',
-        'https://media.giphy.com/media/eiw5mph3qBvdiiHxMa/giphy.gif',
-        'https://media.giphy.com/media/yo3TC0yeHd53G/giphy.gif',
-        'https://media.giphy.com/media/NuiEoMDbstN0J2KAiH/giphy.gif',
-        'https://media.giphy.com/media/1Bgr0VaRnx3pCZbaJa/giphy.gif',
-        'https://media.giphy.com/media/TyFdAtfZBODNC/giphy.gif',
-        'https://media.giphy.com/media/SzC42gUrhHopW/giphy.gif'];
+            'https://media.giphy.com/media/eiw5mph3qBvdiiHxMa/giphy.gif',
+            'https://media.giphy.com/media/yo3TC0yeHd53G/giphy.gif',
+            'https://media.giphy.com/media/NuiEoMDbstN0J2KAiH/giphy.gif',
+            'https://media.giphy.com/media/1Bgr0VaRnx3pCZbaJa/giphy.gif',
+            'https://media.giphy.com/media/TyFdAtfZBODNC/giphy.gif',
+            'https://media.giphy.com/media/SzC42gUrhHopW/giphy.gif'];
         var randomItem = arr[Math.floor(Math.random() * arr.length)];
         // check if target is bot
         if (options.getMember('target').id == '814223957158002689') {
@@ -36,11 +36,11 @@ module.exports = {
         }
         // embed
         const embed = new MessageEmbed()
-                .setColor('#FF0000')
-                .setImage(randomItem)
-                .setFooter({
-                    text:'is dat a blackeye?!.'
-                })
+            .setColor('#FF0000')
+            .setImage(randomItem)
+            .setFooter({
+                text: 'is dat a blackeye?!.'
+            })
 
         if (num == 9 || 0) {
             embed.setTitle(`${options.getMember('target').displayName} dodged ${interaction.member.displayName}'s attack and punched them instead! 👊`)

@@ -35,7 +35,7 @@ module.exports = {
         ctx.translate(169, 67);
         ctx.rotate(0.2);
         ctx.drawImage(userImg, 0, 0, 125, 125);
-        ctx.restore();  
+        ctx.restore();
         // draw user image on canvas in 2nd slot
         ctx.save();
         ctx.translate(330, 461);

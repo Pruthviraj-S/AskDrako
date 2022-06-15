@@ -58,19 +58,16 @@ module.exports = {
         } else {
             // edit the embed
             const set_guild = (interaction.options.getString('guild') == 'TW' ? 0 : interaction.options.getString('guild') == 'TWS' ? 1 : interaction.options.getString('guild') == 'MFS' ? 2 : null)
-            const newemb = new MessageEmbed(target_msg.embeds[set_guild])
-            newemb.fields[3].value = `${interaction.options.getInteger('guildspace')}`
-            // check if optional params given
-            if (interaction.options.getInteger('guildlvl')) { newemb.fields[1].value = `${interaction.options.getInteger('guildlvl')}` }
-            if (interaction.options.getInteger('maxguildcap')) { newemb.fields[4].value = `${interaction.options.getInteger('maxguildcap')}` }
-            // send edited embed
-            if (set_guild == 0) {
-                target_msg.edit({ embeds: [newemb, target_msg.embeds[1], target_msg.embeds[2]] })
-            } else if (set_guild == 1) {
-                target_msg.edit({ embeds: [target_msg.embeds[0], newemb, target_msg.embeds[2]] })
-            } else {
-                target_msg.edit({ embeds: [target_msg.embeds[0], target_msg.embeds[1], newemb] })
-            }
+            target_msg.edit({
+                embeds: target_msg.embeds.map((e, i) => {
+                    if (i == set_guild) {
+                        e.fields[3].value = `${interaction.options.getInteger('guildspace')}`
+                        if (interaction.options.getInteger('guildlvl')) { e.fields[1].value = `${interaction.options.getInteger('guildlvl')}` }
+                        if (interaction.options.getInteger('maxguildcap')) { e.fields[4].value = `${interaction.options.getInteger('maxguildcap')}` }
+                    }
+                    return e;
+                })
+            })
             // Send confirmation embed
             const emb = new MessageEmbed()
                 .setColor('GREEN')
@@ -79,4 +76,3 @@ module.exports = {
         }
     }
 }
-
