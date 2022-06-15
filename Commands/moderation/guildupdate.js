@@ -61,9 +61,9 @@ module.exports = {
             target_msg.edit({
                 embeds: target_msg.embeds.map((e, i) => {
                     if (i == set_guild) {
-                        e.fields[3].value = `${interaction.options.getInteger('guildspace')}`
-                        if (interaction.options.getInteger('guildlvl')) { e.fields[1].value = `${interaction.options.getInteger('guildlvl')}` }
-                        if (interaction.options.getInteger('maxguildcap')) { e.fields[4].value = `${interaction.options.getInteger('maxguildcap')}` }
+                        e.fields[4].value = `${interaction.options.getInteger('guildspace')}`
+                        if (interaction.options.getInteger('guildlvl')) { e.fields[2].value = `${interaction.options.getInteger('guildlvl')}` }
+                        if (interaction.options.getInteger('maxguildcap')) { e.fields[5].value = `${interaction.options.getInteger('maxguildcap')}` }
                     }
                     return e;
                 })

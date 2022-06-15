@@ -14,27 +14,31 @@ module.exports = {
         const emb = new MessageEmbed()
             .setColor('PURPLE')
             .setTitle('The Watchers')
-            .setDescription(`Main Watcher Guild.`)
-            .setThumbnail('https://i.imgur.com/mv83OOx.png')
+            .setDescription(`**Main Watcher Guild.** `)
+            .setThumbnail('https://i.imgur.com/onUhqBo.png')
             .setFields(
+                { name: 'Guild Owner', value: '<@!859500989518184538>'},
                 { name: 'Guild ID', value: '802862', inline: true },
-                { name: 'Guild lvl', value: '27', inline: true },
+                { name: 'Guild lvl', value: '-', inline: true },
                 { name: 'Minimum Power Requirement', value: '500k' },
                 { name: 'Guild Space', value: '-', inline: true },
-                { name: 'Max Guild Space', value: '28', inline: true }
+                { name: 'Max Guild Space', value: '-', inline: true },
+                { name: 'Inactivity Timer', value: '2 Days', inline: true }
             )
             .setTimestamp()
         const emb1 = new MessageEmbed()
             .setColor('AQUA')
             .setTitle('The WatcherSis')
             .setDescription(`Watcher Sister Guild.`)
-            .setThumbnail('https://i.imgur.com/YtP88tw.png')
+            .setThumbnail('https://i.imgur.com/gxFxYMk.png')
             .setFields(
+                { name: 'Guild Owner', value: '<@!795419163857387560>'},
                 { name: 'Guild ID', value: '808472', inline: true },
                 { name: 'Guild lvl', value: '22', inline: true },
                 { name: 'Minimum Power Requirement', value: '100k' },
                 { name: 'Guild Space', value: '-', inline: true },
-                { name: 'Max Guild Space', value: '26', inline: true }
+                { name: 'Max Guild Space', value: '26', inline: true },
+                { name: 'Inactivity Timer', value: '3 Days', inline: true }
             )
             .setTimestamp()
         const emb2 = new MessageEmbed()
@@ -43,11 +47,13 @@ module.exports = {
             .setDescription(`MfinSquis Guild.`)
             .setThumbnail('https://i.imgur.com/90JblKx.png')
             .setFields(
+                { name: 'Guild Owner', value: '<@!618593687093641216>'},
                 { name: 'Guild ID', value: '804920', inline: true },
                 { name: 'Guild lvl', value: '-', inline: true },
                 { name: 'Minimum Power Requirement', value: '150k' },
                 { name: 'Guild Space', value: '-', inline: true },
-                { name: 'Max Guild Space', value: '24', inline: true }
+                { name: 'Max Guild Space', value: '24', inline: true },
+                { name: 'Inactivity Timer', value: '2 Days', inline: true }
             )
             .setTimestamp()
         // send embed
