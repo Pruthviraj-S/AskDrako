@@ -18,7 +18,8 @@ module.exports = {
                             new MessageEmbed()
                                 .setColor("RED")
                                 .setDescription('⚠️ An error oocurred while running this command.')
-                        ]
+                        ],
+                    ephemeral: true
                 }) && client.commands.delete(Interaction.commandName);
             }
             // permission check
