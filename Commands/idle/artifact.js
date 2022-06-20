@@ -3,7 +3,7 @@ const { CommandInteraction, MessageEmbed } = require('discord.js')
 
 module.exports = {
     name: 'artifact',
-    description: 'Send guild info',
+    description: 'p2w artifact info',
     permission: 'SEND_MESSAGES',
     options: [
         {
