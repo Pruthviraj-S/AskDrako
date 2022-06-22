@@ -17,8 +17,6 @@ module.exports = {
             // If the message this reaction belongs to was removed, the fetching might result in an API error which should be handled
             try {
                 await reaction.fetch();
-                // check if bot
-                if (reaction.message.author.bot) return;
             } catch (error) {
                 console.error('Something went wrong when fetching the message:', error);
                 // Return as `reaction.message.author` may be undefined/null
@@ -26,7 +24,8 @@ module.exports = {
             }
         }
         // console.log(reaction.emoji.name);
-
+        // check if message was from bot
+        if (reaction.message.author.bot) return;
         // pepeshock 
         if (reaction.emoji.id === '983375754010198076' || reaction.emoji.id === '989240357197856798') {
             if (reaction.count > 1) return;
