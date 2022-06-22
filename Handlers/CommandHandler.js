@@ -35,10 +35,6 @@ module.exports = async (client, PG, Ascii) => {
                 return Table.addRow(command.name, '⚠️ Failed', 'Missing perms or invalid.')
             }
         }
-        // check category
-        if (!command.category) {
-            return Table.addRow(command.name, '⚠️ Failed', 'Missing command category.')
-        }
         // push commands into commands array
         client.commands.set(command.name, command);
         CommandsArray.push(command);
