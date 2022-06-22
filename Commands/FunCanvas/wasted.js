@@ -5,7 +5,6 @@ module.exports = {
     name: 'wasted',
     description: 'R.I.P!!! ☠️',
     permission: 'SEND_MESSAGES',
-    category:'Fun',
     options: [
         {
             name: 'target',

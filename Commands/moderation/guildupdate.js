@@ -3,8 +3,7 @@ const { CommandInteraction, MessageEmbed } = require('discord.js')
 module.exports = {
     name: 'guildupdate',
     description: 'Update guild info',
-    permission: 'BAN_MEMBERS',
-    category:'Moderation',
+    role:'982294535113670747',
     options: [
         {
             name: 'guild',

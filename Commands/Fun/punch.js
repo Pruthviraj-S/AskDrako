@@ -4,7 +4,6 @@ module.exports = {
     name: 'punch',
     description: 'Kapoowww!',
     permission: 'SEND_MESSAGES',
-    category:'Fun',
     options: [
         {
             name: 'target',

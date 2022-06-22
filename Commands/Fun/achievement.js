@@ -5,7 +5,6 @@ module.exports = {
     name: 'achievement',
     description: 'Get Achievement.',
     permission: 'SEND_MESSAGES',
-    category:'Fun',
     options: [
         {
             name: 'text',

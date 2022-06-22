@@ -5,7 +5,6 @@ module.exports = {
     name: 'worthless',
     description: 'excoose me?!!',
     permission: 'SEND_MESSAGES',
-    category:'Fun',
     options: [
         {
             name: 'target',

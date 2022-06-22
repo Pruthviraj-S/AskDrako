@@ -5,7 +5,6 @@ module.exports = {
     name: 'reason',
     description: '💖!!!',
     permission: 'SEND_MESSAGES',
-    category:'Fun',
     options: [
         {
             name: 'target',

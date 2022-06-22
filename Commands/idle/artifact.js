@@ -5,7 +5,6 @@ module.exports = {
     name: 'artifact',
     description: 'p2w artifact info',
     permission: 'SEND_MESSAGES',
-    category:'Ingame',
     options: [
         {
             name: 'artifact',
