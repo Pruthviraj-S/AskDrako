@@ -24,7 +24,11 @@ module.exports = {
             }
             // permission check
             if (command.permission && !Interaction.member.permissions.has(command.permission)) {
-                return Interaction.reply({ content: `You do not have the required permission for this command: \`${Interaction.commandName}\`.`, ephemeral: true })
+                return Interaction.reply({ content: `You do not have the required permission for this command: **${Interaction.commandName}**.`, ephemeral: true })
+            }
+            // role check
+            if (command.role && !Interaction.member.roles.cache.has(command.role)) {
+                return Interaction.reply({ content: `You do not have the required roles for this command: **${Interaction.commandName}**.`, ephemeral: true })
             }
             // execute
             command.execute(Interaction, client)
