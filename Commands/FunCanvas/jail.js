@@ -5,6 +5,7 @@ module.exports = {
     name: 'jail',
     description: 'who dun love bars!!!',
     permission: 'SEND_MESSAGES',
+    category:'Fun',
     options: [
         {
             name: 'target',

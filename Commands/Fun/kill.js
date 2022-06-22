@@ -4,6 +4,7 @@ module.exports = {
     name: 'kill',
     description: 'Kill a member and send em to hell!',
     permission: 'SEND_MESSAGES',
+    category:'Fun',
     options: [
         {
             name: 'target',

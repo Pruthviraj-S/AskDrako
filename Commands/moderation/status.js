@@ -7,6 +7,7 @@ module.exports = {
     name: 'status',
     description: 'Shows Bot Status',
     permission: 'BAN_MEMBERS',
+    category:'Moderation',
     /**
      * 
      * @param {CommandInteraction} interaction 

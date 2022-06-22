@@ -5,6 +5,7 @@ module.exports = {
     name: 'testimony',
     description: 'Weeb Alert!!!',
     permission: 'SEND_MESSAGES',
+    category:'Fun',
     options: [
         {
             name: 'target',

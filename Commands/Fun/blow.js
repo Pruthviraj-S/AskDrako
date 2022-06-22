@@ -4,6 +4,7 @@ module.exports = {
     name: 'blow',
     description: 'Blow a user to oblivion',
     permission: 'SEND_MESSAGES',
+    category:'Fun',
     options: [
         {
             name: 'target',

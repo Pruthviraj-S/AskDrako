@@ -5,6 +5,7 @@ module.exports = {
     name: 'eww',
     description: 'yuck!!!',
     permission: 'SEND_MESSAGES',
+    category:'Fun',
     options: [
         {
             name: 'target',

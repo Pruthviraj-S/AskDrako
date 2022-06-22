@@ -5,6 +5,7 @@ module.exports = {
     name: 'guild',
     description: 'Send guild info',
     permission: 'BAN_MEMBERS',
+    category:'Moderation',
     /**
      * 
      * @param {CommandInteraction} interaction 

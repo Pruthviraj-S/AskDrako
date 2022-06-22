@@ -4,6 +4,7 @@ module.exports = {
     name: 'guildupdate',
     description: 'Update guild info',
     permission: 'BAN_MEMBERS',
+    category:'Moderation',
     options: [
         {
             name: 'guild',
