@@ -26,10 +26,18 @@ module.exports = {
         // console.log(reaction.emoji.name);
         // check if message was from bot
         if (reaction.message.author.bot) return;
-        // pepeshock 
-        if (reaction.emoji.id === '983375754010198076' || reaction.emoji.id === '989240357197856798') {
-            if (reaction.count > 1) return;
-            reaction.message.reply('<a:pepeshocked:989240357197856798>')
+
+        // switch case for reactions
+        switch (reaction.emoji.id) {
+            // pepeshock 
+            case '983375754010198076':
+            case '989240357197856798':
+                reaction.message.reply('<a:pepeshocked:989240357197856798>')
+                break;
+            // kekw
+            case '983394003733057537':
+                reaction.message.reply('<:kek:983394003733057537>')
+                break;
         }
     }
 }
