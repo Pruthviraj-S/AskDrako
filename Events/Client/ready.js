@@ -14,10 +14,10 @@ module.exports = {
         client.user.setPresence({
             activities: [
                 {
-                    name: 'with P_dawg#0304'
+                    name: 'with P_Dawg#0304'
                 }
             ],
-            status: 'idle'
+            status: 'online'
         });
         // log
         console.log(`Bot logged in as ${client.user.username} and ID: ${client.user.id}`)
