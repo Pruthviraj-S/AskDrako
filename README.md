@@ -14,7 +14,27 @@
 <a href="https://nodejs.org/en/"><img title="node.js" src="https://img.shields.io/node/v/discord.js"></a>
 <a href="https://nodejs.org/en/"><img title="npm" src="https://img.shields.io/npm/v/discord.js"></a>
 <a href="https://discord.js.org/#/"><img title="discord.js" src="https://img.shields.io/badge/discord.js-v13.8.1-critical"></a>
-</p>    
+<a href="https://discord.js.org/#/"><img title="discord.js" src="https://img.shields.io/github/package-json/v/pruthviraj-s/askdrako"></a>
+</p>
+
+# AskDrako, discord bot
+
+A discord bot meant for dealing with ingame information for idle heroes.
+
+### Devlopment Environment
+* Node.js v16.6 or higher
+* Npm v12 or higher
+* Discord.js v13 or higher
+
+### Dependencies
+![mongoose](https://img.shields.io/github/package-json/dependency-version/pruthviraj-s/askdrako/mongoose)
+![canvas](https://img.shields.io/github/package-json/dependency-version/pruthviraj-s/askdrako/canvas)
+![dotenv](https://img.shields.io/github/package-json/dependency-version/pruthviraj-s/askdrako/dotenv)
+![asciitable](https://img.shields.io/github/package-json/dependency-version/pruthviraj-s/askdrako/ascii-table)
+![welcome](https://img.shields.io/github/package-json/dependency-version/pruthviraj-s/askdrako/discord-welcome-card)
+![glob](https://img.shields.io/github/package-json/dependency-version/pruthviraj-s/askdrako/glob)
+![nodemon](https://img.shields.io/github/package-json/dependency-version/pruthviraj-s/askdrako/nodemon)
+![superagent](https://img.shields.io/github/package-json/dependency-version/pruthviraj-s/askdrako/superagent)
 
 ### Refrences
 * **Discord Dev Portal:**
