@@ -47,7 +47,7 @@ module.exports = {
             name: 'powerreq',
             description: 'Set power requirement.',
             required: false,
-            type: 4
+            type: 3
         }
     ],
     /**
