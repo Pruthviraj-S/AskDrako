@@ -3,7 +3,7 @@ const { CommandInteraction, MessageEmbed } = require('discord.js')
 module.exports = {
     name: 'guildupdate',
     description: 'Update guild info',
-    role:'982294535113670747',
+    role: '982294535113670747',
     options: [
         {
             name: 'guild',
@@ -66,13 +66,19 @@ module.exports = {
             const set_guild = (interaction.options.getString('guild') == 'TW' ? 0 : interaction.options.getString('guild') == 'TWS' ? 1 : interaction.options.getString('guild') == 'MFS' ? 2 : null)
             target_msg.edit({
                 embeds: target_msg.embeds.map((e, i) => {
-                    if (i == set_guild) {
-                        e.fields[4].value = `${interaction.options.getInteger('guildspace')}`
-                        if (interaction.options.getInteger('guildlvl')) { e.fields[2].value = `${interaction.options.getInteger('guildlvl')}` }
-                        if (interaction.options.getInteger('maxguildcap')) { e.fields[5].value = `${interaction.options.getInteger('maxguildcap')}` }
-                        if (interaction.options.getInteger('powerreq')) { e.fields[3].value = `${interaction.options.getInteger('maxguildcap')}` }
+                    try {
+                        if (i == set_guild) {
+                            e.fields[4].value = `${interaction.options.getInteger('guildspace')}`
+                            if (interaction.options.getInteger('guildlvl')) { e.fields[2].value = `${interaction.options.getInteger('guildlvl')}` }
+                            if (interaction.options.getInteger('maxguildcap')) { e.fields[5].value = `${interaction.options.getInteger('maxguildcap')}` }
+                            if (interaction.options.getString('powerreq')) { e.fields[3].value = `${interaction.options.getString('powerreq')}` }
+                        }
+                        return e;
                     }
-                    return e;
+                    catch (error) {
+                        console.log(error)
+                    }
+
                 })
             })
             // Send confirmation embed
