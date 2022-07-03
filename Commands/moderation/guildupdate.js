@@ -39,7 +39,13 @@ module.exports = {
         },
         {
             name: 'maxguildcap',
-            description: 'Set  max Guild capacity.',
+            description: 'Set max Guild capacity.',
+            required: false,
+            type: 4
+        },
+        {
+            name: 'powerreq',
+            description: 'Set power requirement.',
             required: false,
             type: 4
         }
@@ -64,6 +70,7 @@ module.exports = {
                         e.fields[4].value = `${interaction.options.getInteger('guildspace')}`
                         if (interaction.options.getInteger('guildlvl')) { e.fields[2].value = `${interaction.options.getInteger('guildlvl')}` }
                         if (interaction.options.getInteger('maxguildcap')) { e.fields[5].value = `${interaction.options.getInteger('maxguildcap')}` }
+                        if (interaction.options.getInteger('powerreq')) { e.fields[3].value = `${interaction.options.getInteger('maxguildcap')}` }
                     }
                     return e;
                 })
