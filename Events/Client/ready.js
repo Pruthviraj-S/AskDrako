@@ -32,5 +32,7 @@ module.exports = {
         }).catch((err) => {
             console.log(err)
         });
+
+        client.guilds.cache.get(guildid).channels.cache.get('989213178594492426').send(`<@495023063486824467>\nBot logged in as **${client.user.username}** and ID: **${client.user.id}** \n**Ping: ${client.ws.ping}ms**`)
     }
 }
