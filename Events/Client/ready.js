@@ -1,5 +1,5 @@
 const { guildid } = require('../../config.json');
-const { Client, CommandInteraction } = require('discord.js')
+const { Client, CommandInteraction, MessageEmbed } = require('discord.js')
 const { mongoose } = require('mongoose')
 
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
     * @param {CommandInteraction} interaction
     * @param {Client} client
     */
-    execute(interaction, client) {
+    async execute(interaction, client) {
         // set prescence
         client.user.setPresence({
             activities: [
@@ -32,7 +32,21 @@ module.exports = {
         }).catch((err) => {
             console.log(err)
         });
-
-        client.guilds.cache.get(guildid).channels.cache.get('989213178594492426').send(`<@495023063486824467>\nBot logged in as **${client.user.username}** and ID: **${client.user.id}** \n**Ping: ${client.ws.ping}ms**`)
+        const emb = new MessageEmbed()
+            .setColor('FUCHSIA')
+            .setDescription('**Bot Restarted!**')
+            .setFields(
+                {
+                    name:'Username', value:`${client.user.username}`
+                },
+                {
+                    name:'ID', value:`${client.user.id}`
+                },
+                {
+                    name:'Status', value:`${client.ws.status}`
+                }
+            )
+            .setTimestamp()
+        client.guilds.cache.get(guildid).channels.cache.get('989213178594492426').send({content:`<@495023063486824467>`,embeds:[emb]})
     }
 }
