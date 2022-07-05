@@ -19,10 +19,10 @@ module.exports = {
                     name: 'The Watcher Sis',
                     value: 'TWS'
                 },
-                {
-                    name: 'MfinSquis',
-                    value: 'MFS'
-                },
+                // {
+                //     name: 'MfinSquis',
+                //     value: 'MFS'
+                // },
             ],
         },
         {
