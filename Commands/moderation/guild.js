@@ -62,6 +62,6 @@ module.exports = {
         // send embed
         let channel = interaction.guild.channels.cache.get('982747128801660929')
         interaction.reply({ content: `Message succesfully sent in <#982747128801660929>`, ephemeral: true })
-        channel.send({ embeds: [emb, emb1] })
+        channel.send({ embeds: [emb, emb1, emb2] })
     }
 }
