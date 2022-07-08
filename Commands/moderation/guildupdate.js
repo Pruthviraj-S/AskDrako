@@ -19,10 +19,10 @@ module.exports = {
                     name: 'The Watcher Sis',
                     value: 'TWS'
                 },
-                // {
-                //     name: 'MfinSquis',
-                //     value: 'MFS'
-                // },
+                {
+                    name: 'The Watched',
+                    value: 'TWD'
+                },
             ],
         },
         {
@@ -63,7 +63,7 @@ module.exports = {
             interaction.reply({ content: ` ⚠️ Message not found !! Check if Original Message in **<#982747128801660929>** was deleted. \n If so use /guild command to add new message. `, ephemeral: true })
         } else {
             // edit the embed
-            const set_guild = (interaction.options.getString('guild') == 'TW' ? 0 : interaction.options.getString('guild') == 'TWS' ? 1 : interaction.options.getString('guild') == 'MFS' ? 2 : null)
+            const set_guild = (interaction.options.getString('guild') == 'TW' ? 0 : interaction.options.getString('guild') == 'TWS' ? 1 : interaction.options.getString('guild') == 'TWD' ? 2 : null)
             target_msg.edit({
                 embeds: target_msg.embeds.map((e, i) => {
                     try {
