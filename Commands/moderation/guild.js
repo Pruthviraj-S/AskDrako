@@ -12,17 +12,17 @@ module.exports = {
     execute(interaction) {
         // embeds
         const emb = new MessageEmbed()
-            .setColor('PURPLE')
+            .setColor('GOLD')
             .setTitle('The Watchers')
             .setDescription(`**Main Watcher Guild.** `)
             // .setThumbnail('https://i.imgur.com/onUhqBo.png')
             .setFields(
-                { name: 'Guild Owner', value: '<@!859500989518184538>' },
+                { name: 'Guild Owner', value: '<@!957335076146925578>' },
                 { name: 'Guild ID', value: '802862', inline: true },
-                { name: 'Guild lvl', value: '29', inline: true },
-                { name: 'Minimum Power Requirement', value: '800k' },
-                { name: 'Guild Space', value: '29', inline: true },
-                { name: 'Max Guild Space', value: '29', inline: true },
+                { name: 'Guild lvl', value: '32', inline: true },
+                { name: 'Minimum Power Requirement', value: '1.5 mil' },
+                { name: 'Guild Space', value: '27', inline: true },
+                { name: 'Max Guild Space', value: '30', inline: true },
                 { name: 'Inactivity Timer', value: '1 Day', inline: true }
             )
             .setImage('https://i.imgur.com/onUhqBo.png')
@@ -36,7 +36,7 @@ module.exports = {
                 { name: 'Guild Owner', value: '<@!795419163857387560>' },
                 { name: 'Guild ID', value: '808472', inline: true },
                 { name: 'Guild lvl', value: '28', inline: true },
-                { name: 'Minimum Power Requirement', value: '100k' },
+                { name: 'Minimum Power Requirement', value: '1.5 mil' },
                 { name: 'Guild Space', value: '24', inline: true },
                 { name: 'Max Guild Space', value: '29', inline: true },
                 { name: 'Inactivity Timer', value: '2 Days', inline: true }
@@ -62,6 +62,6 @@ module.exports = {
         // send embed
         let channel = interaction.guild.channels.cache.get('982747128801660929')
         interaction.reply({ content: `Message succesfully sent in <#982747128801660929>`, ephemeral: true })
-        channel.send({ embeds: [emb, emb1, emb2] })
+        channel.send({ embeds: [emb, emb1] })
     }
 }
