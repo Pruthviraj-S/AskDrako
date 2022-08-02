@@ -33,12 +33,12 @@ module.exports = {
             .setDescription(`Watcher Sister Guild.`)
             // .setThumbnail('https://i.imgur.com/gxFxYMk.png')
             .setFields(
-                { name: 'Guild Owner', value: '<@!795419163857387560>' },
+                { name: 'Guild Owner', value: '<@!98411213490225152>' },
                 { name: 'Guild ID', value: '808472', inline: true },
-                { name: 'Guild lvl', value: '28', inline: true },
+                { name: 'Guild lvl', value: '30', inline: true },
                 { name: 'Minimum Power Requirement', value: '1.5 mil' },
-                { name: 'Guild Space', value: '24', inline: true },
-                { name: 'Max Guild Space', value: '29', inline: true },
+                { name: 'Guild Space', value: '14', inline: true },
+                { name: 'Max Guild Space', value: '30', inline: true },
                 { name: 'Inactivity Timer', value: '2 Days', inline: true }
             )
             .setImage('https://i.imgur.com/gxFxYMk.png')
